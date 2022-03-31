@@ -1,0 +1,60 @@
+.img{
+   position: relative;
+    /* flex: content; */
+    max-width: 150px;
+    max-height: 125px;
+    /* width: 50px; */
+}
+body{
+    background-color: rgba(25, 84, 99, 0.836);
+    background-position: center;
+
+
+}
+h3{
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-optical-sizing:inherit;
+}
+
+#score{
+    font-family:fantasy;
+    background-color: rgb(47, 208, 133);
+}
+.hidden{
+    opacity: 0;
+}
+
+#imguser{
+    position: relative;
+    left: 20rem;
+    align-items: center;
+    flex-flow: row;
+    flex-flow: column;
+
+}
+#imgbot{
+    position: relative;
+    left: 10rem;
+    top:-12rem;
+    flex-flow: row;
+    flex-flow: column;
+    align-items:center;
+    border-top: 35px;
+    align-items: center;
+}
+
+#options{
+    position: relative;
+    top:-150px;
+    right:-10rem;
+}
+.win{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: relative;
+    top:-150px;
+    right:-10rem;
+}
+#creator{
+    top:auto;
+}
