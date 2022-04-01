@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
 .img{
    position: relative;
     /* flex: content; */
@@ -34,7 +36,8 @@ h3{
 
 #imguser{
     position: relative;
-    left: 20rem;
+    left: 32rem;
+    top: -8rem;
     align-items: center;
     flex-flow: row;
     flex-flow: column;
@@ -42,8 +45,8 @@ h3{
 }
 #imgbot{
     position: relative;
-    left: 10rem;
-    top:-14rem;
+    left: 20rem;
+    top:-22rem;
     flex-flow: row;
     flex-flow: column;
     align-items:center;
@@ -62,12 +65,15 @@ h3{
 
 #options{
     position: relative;
-    top:-150px;
-    right:-10rem;
+    top:-15rem;
+    right:-19rem;
 }
 #head{
+    font-family: 'Amatic SC', cursive;
+    font-size:70px;
     position: relative;
    right:-15%;
+   margin-top: 0;
 }
 .win{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

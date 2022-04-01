@@ -17,17 +17,23 @@ let  choice='N';
 checkbox.addEventListener('change',function(){
     if(checkbox.checked)
     {
-        alert("Are you sure you want  to continue");
-       choice= prompt("Hi,solve this puzzle to access the content\nValue of arcsin(2)\nEnter the choice below\na). 1\nb). 0\nc). Doesn't Exist",'eg. a ')=='c'?choice='A':call();
-       function call(){
-           alert("sorry  wrong answer");
-           choice='N';
+        // alert("Are you sure you want  to continue");
+       prompt("Hi,solve this puzzle to access the content\nValue of arcsin(2)\nEnter the choice below\na). 1\nb). 0\nc). Doesn't Exist",'eg. a ')=='c'?pass():fail();
 
-       }
-        
+       function pass(){
+        choice='A';
         console.log(choice);
         ver.textContent="Adult Version";
         const game2=new Game();
+
+       };
+       function fail(){
+           alert("Sorry the computer thinks your not Old enough!");
+           choice='N';
+
+       };
+        
+        
         
     // console.log("checked");
 
@@ -91,8 +97,8 @@ class Game{
  }
 
  displayScore(){
-     su.textContent=`Score(user): ${this.#scoreUser}`;
-     sb.textContent=`Score(bot) : ${this.#scoreBot}`;
+     su.textContent=`Score(user):  ${this.#scoreUser}`;
+     sb.textContent=`Score(bot) :  ${this.#scoreBot}`;
 
  }
 
@@ -101,29 +107,21 @@ class Game{
         {win.textContent="DRAW!! NO WINNER";
             }
         else 
-        {
-             if(this.#bot==0&&this.user==1)
-             {   this.#scoreUser++;
-                win.textContent="YOU are WINNER🎊🎊";
+        {   if(this.#bot==2&&this.user==0)
+            { this.#scoreUser++;
+                 win.textContent="YOU are WINNER🎊🎊";
              }
-        else if(this.#bot==1&&this.user==0)
-          { win.textContent="BOT WON 💣";
-             this.#scoreBot++;       }
-        if(this.#bot==1&&(this.user==2))
-         {       this.#scoreUser++;
-              win.textContent="YOU are WINNER🎊🎊";
-            } 
-         else if(this.#bot==2&&this.user==1)
-              { win.textContent="BOT WON 💣";
-              this.#scoreBot++;}
-
-         if(this.#bot==2&&this.user==0)
-         { this.#scoreUser++;
-              win.textContent="YOU are WINNER🎊🎊";
-          } 
-                else if(this.#bot==0&&this.user==2)
+             else if(this.#bot==0&&this.user==2)
                { win.textContent="BOT WON 💣";
                this.#scoreBot++;}
+             else if(this.user>this.#bot)
+            { this.#scoreUser++;
+                win.textContent="YOU are WINNER🎊🎊";
+            } 
+            else
+            { win.textContent="BOT WON 💣";
+            this.#scoreBot++;}
+              
              }
 
     }
