@@ -3,8 +3,8 @@
 .img{
    position: relative;
     /* flex: content; */
-    max-width: 150px;
-    max-height: 125px;
+    max-width: 300px;
+    max-height: 300px;
     /* width: 50px; */
 }
 body{
@@ -25,6 +25,7 @@ h3{
     max-width: max-content;
     min-width:20%;
     flex-flow: column;
+    
 }
 .hidden{
     opacity: 0;
@@ -36,21 +37,23 @@ h3{
 
 #imguser{
     position: relative;
-    left: 32rem;
-    top: -8rem;
+    left: 36rem;
+    top: -1rem;
     align-items: center;
     flex-flow: row;
     flex-flow: column;
 
 }
 #imgbot{
+   
     position: relative;
-    left: 20rem;
-    top:-22rem;
+    left: 14rem;
+    top:-26rem;
     flex-flow: row;
     flex-flow: column;
     align-items:center;
     border-top: 35px;
+
    
 }
 .btn{
@@ -65,8 +68,8 @@ h3{
 
 #options{
     position: relative;
-    top:-15rem;
-    right:-19rem;
+    top:-22rem;
+    right:-17rem;
 }
 #head{
     font-family: 'Amatic SC', cursive;
@@ -78,7 +81,7 @@ h3{
 .win{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     position: relative;
-    top:-150px;
+    top:-22rem;
     right:-10rem;
 }
 #creatordiv{
@@ -89,7 +92,8 @@ div{
 }
 
 .big{
-    font-size:xx-large
+    font-size:xx-large;
+    left: 12rem;
 }
 
 .switch {
