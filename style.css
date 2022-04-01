@@ -19,9 +19,15 @@ h3{
     font-optical-sizing:inherit;
 }
 
+.reset:hover{
+    font-size: large;
+    background-color: rgb(135, 150, 189);
+    max-width: max-content;
+}
+
 #score{
     font-family:fantasy;
-    background-color: rgb(47, 208, 133);
+    background-color: rgb(47, 208, 120);
     max-width: max-content;
     min-width:20%;
     flex-flow: column;
@@ -90,6 +96,7 @@ h3{
 div{
     font-size: x-large;
 }
+
 
 .big{
     font-size:xx-large;

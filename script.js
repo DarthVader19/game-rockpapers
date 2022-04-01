@@ -10,48 +10,61 @@ const su=document.querySelector('.scoreuser');
 const sb=document.querySelector('.scorebot');
 const ver=document.querySelector('.version');
 const checkbox=document.querySelector('.sw');
+const reset=document.querySelector('.reset');
 let  choice='N';
 // imgUser.src="scissor.png";
 
 
-checkbox.addEventListener('change',function(){
-    if(checkbox.checked)
-    {
-        // alert("Are you sure you want  to continue");
-       prompt("Hi,solve this puzzle to access the content\nValue of arcsin(2)\nEnter the choice below\na). 1\nb). 0\nc). Doesn't Exist",'eg. a ')=='c'?pass():fail();
 
-       function pass(){
-        choice='A';
-        console.log(choice);
-        ver.textContent="Adult Version";
-        const game2=new Game();
+class Feature{
+    constructor(){
+        this.features();
+    }
 
-       };
-       function fail(){
-           alert("Sorry the computer thinks your not Old enough!");
-           choice='N';
-
-       };
+    version(){
         
+            if(checkbox.checked)
+            {
+                // alert("Are you sure you want  to continue");
+               prompt("Hi,solve this puzzle to access the content\nValue of arcsin(2)\nEnter the choice below\na). 1\nb). 0\nc). Doesn't Exist",'eg. a ')=='c'?pass():fail();
         
+               function pass(){
+                choice='A';
+                console.log(choice);
+                ver.textContent="Adult Version";
+                const game2=new Game();
         
-    // console.log("checked");
+               };
+               function fail(){
+                   alert("Sorry the computer thinks your not Old enough!");
+                   choice='N';
+        
+               };
+              
+            }
+            else
+            {
+                choice='N';
+                console.log(choice);
+                ver.textContent="Normal Version";
+                const game2=new Game();
+                console.log('not checked');
+                
+            }
+            
+        
 
     }
 
-    else
-    {
-        choice='N';
-        console.log(choice);
-        ver.textContent="Normal Version";
-        const game2=new Game();
-        console.log('not checked');
-        
+    features(){
+        reset.addEventListener('click',function(){
+             location.reload()
+        })
+
+        checkbox.addEventListener('change',this.version.bind(this))
     }
-    
-    
-    
-})
+}
+
 class Game{
     #bot;
     #str1={0:'therock11',1:'thepaper',2:'thescissor'};
@@ -97,8 +110,8 @@ class Game{
  }
 
  displayScore(){
-     su.textContent=`Score(user):  ${this.#scoreUser}`;
-     sb.textContent=`Score(bot) :  ${this.#scoreBot}`;
+     su.textContent=`Score(user):    ${this.#scoreUser}`;
+     sb.textContent=`Score(bot) :    ${this.#scoreBot}`;
 
  }
 
@@ -130,4 +143,5 @@ class Game{
 
 
 (()=>
-{const game=new Game()})();
+{const game=new Game();
+const features=new Feature()})();
