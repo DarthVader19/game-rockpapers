@@ -11,7 +11,15 @@
 
 
     <h1 id="head">Rock paper Scissor Game</h1>
-    <div>
+    <div id="slid">
+     <a class="version">Version</a>
+        <label class="switch">
+         <input class="sw" type="checkbox">
+         <span class="slider round"></span>
+       </label>
+
+    </div>
+    <div class="big">
         <ul class="scoreuser" id="score">
             Score(user):
         </ul>
@@ -30,18 +38,19 @@
    </div>
    <div id="options">   
    <h3>Choose  from below   </h3>
+  
         <li class="list">
-            <button class="btn btn1" type="submit">rock</button>
-            <button class="btn btn2" type="submit">paper</button>
-            <button class="btn btn3" type="submit">scissor</button>
+            <button class="btn btn1 btn-color" type="submit">rock</button>
+            <button class="btn btn2 btn-color" type="submit">paper</button>
+            <button class="btn btn3 btn-color" type="submit">scissor</button>
         </li>
     </div> 
    
 
     <h2 class="win">Let's Play</h2>
 
-  <div id="creator">&copy;
-      <a href="https://www.twitter.com">@shu</a>
+  <div id="creatordiv">&copy;
+      <a id="creator" href="https://www.twitter.com">@shu</a>
   </div>
     <script src="script.js"></script>
 </body>
