@@ -9,7 +9,21 @@
 <body background="bgimg.jpg">
     <link rel="stylesheet" href="style.css">
 
+   <section>
+    <!-- <button id="myBtn">Open Modal</button> -->
 
+    <!-- The Modal -->
+    <div id="Modal" class="modal">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="modalcontent">Some text in the Modal..</p>
+          <input class="input-modal" type="text" placeholder="Enter here eg: 5"><button class="btn-modal" type="submit">send</button>
+      </div>
+    
+    </div>
+   </section>
     <h1 id="head">Rock paper Scissor Game</h1>
     <div id="slid">
      <a class="version">Version</a>
@@ -20,9 +34,9 @@
        
 
     </div>
-    <div class="reset">
+    <li class="lireset">
         <button class="reset" type="submit">Reset</button>
-    </div>
+    </li>
     <div class="big">
         <ul class="scoreuser" id="score">
             Score(user):
@@ -33,12 +47,12 @@
     </div>
     <div class="image" id="imguser">
         <h3 >User Input</h3>
-        <img class="img user" src="theall.jpg" alt="No image">
+        <img class="img user" src="theall.jpg" alt="No image" width="300px" height="300px">
     </div>
 
     <div id="imgbot">
         <h3>Bot Input</h3>
-        <img class="img bot" src="bot.jpg" alt="noimage" >
+        <img class="img bot" src="bot.jpg" alt="noimage" width="300px" height="300px" >
    </div>
    <div id="options">   
    <h3>Choose  from below   </h3>
