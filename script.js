@@ -39,7 +39,7 @@ class Feature{
         // this.#data.exp=data.expression;
         // this.#data.answer=data.answer;
         this.#data.exp="Hi, you need to solve this to access       the content of the Ridonculous version🎃\n        If you solve this you get  a big pie 🍰\n  Expression =             4*arctan(1) ";
-        this.#data.answer=3.1415;
+        this.#data.answer=3.1415926535;
      }
 
 
