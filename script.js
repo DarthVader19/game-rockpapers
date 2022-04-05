@@ -166,6 +166,7 @@ class Feature{
         modal.style.display="none";
 
           });
+          setTimeout(()=> modal.style.display="none",4000)
 
        modalclose.addEventListener('click',function(e){
            e.preventDefault();

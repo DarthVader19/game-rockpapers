@@ -187,8 +187,8 @@ div{
     
   }
   .gif{
-    width: 350px;
-    height: 350px;
+    width: 380px;
+    height: 450px;
   }
   
   /* Modal Content/Box */
@@ -202,9 +202,9 @@ div{
   
   /* The Close Button */
   .close {
-    color: #aaa;
+    color: rgb(96, 15, 15);
     float: right;
-    font-size: 28px;
+    font-size: 75px;
     font-weight: bold;
   }
   
