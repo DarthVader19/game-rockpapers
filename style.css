@@ -186,6 +186,10 @@ div{
     background-color: rgba(198, 179, 179, 0.4);
     
   }
+  .gif{
+    width: 350px;
+    height: 350px;
+  }
   
   /* Modal Content/Box */
   .modal-content {

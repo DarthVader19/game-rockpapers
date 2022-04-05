@@ -11,6 +11,11 @@ const sb=document.querySelector('.scorebot');
 const ver=document.querySelector('.version');
 const checkbox=document.querySelector('.sw');
 const reset=document.querySelector('.reset');
+const modalcontent=document.querySelector('.modalcontent');
+const modal=document.querySelector('.modal');
+const modalclose=document.querySelector('.close');
+const modalbtn=document.querySelector('.btn-modal');
+ const inputmodal=document.querySelector('.input-modal');
 let  choice='N';
 // imgUser.src="scissor.png";
 
@@ -23,7 +28,7 @@ class Feature{
         operation:'',
         second:0,
         answer:0,
-    }
+    };
     constructor(){
         this.features();
         // this.getexp();
@@ -51,6 +56,7 @@ class Feature{
                 //  this.getexp();
                 // alert("Are you sure you want  to continue");
                 this.modal();
+            
             //    prompt(`Hi,solve this puzzle to access the content \n${this.#data.exp}\nEnter the choice below`,' here')==`${this.#data.answer}`?pass():fail();
              
               
@@ -83,11 +89,7 @@ class Feature{
 
        };
     modal(){
-        const modalcontent=document.querySelector('.modalcontent');
-        const modal=document.querySelector('.modal');
-        const modalclose=document.querySelector('.close');
-        const modalbtn=document.querySelector('.btn-modal');
-        const inputmodal=document.querySelector('.input-modal');
+        
         modal.style.display="block";
        modalcontent.textContent =this.#data.exp;
        
@@ -119,15 +121,66 @@ class Feature{
         })
 
         checkbox.addEventListener('change',this.version.bind(this))
+
+
+        
     }
+
+    loadGif(search){
+        const apikey="E41182PLMN8J";
+        const search_term=`${search}`;
+        const lmt=4;
+        const url="https://g.tenor.com/v1/search?q=" + search_term + "&key=" +
+        apikey + "&limit=" + lmt;
+
+        fetch(url).then(res=>res.json()).then(data=>this.displayGif(data)
+        ).catch(err=>console.log(err)
+        )
+
+    }
+    rand(range){
+        return Math.floor(Math.random()*range)
+    };
+
+    displayGif(gif){
+         modal.style.display="block";
+        
+   console.log(gif.results[0]["media"][0]["nanogif"]["url"]);
+   
+    //    modalcontent.textContent ="You WIN";
+       modalbtn.style.opacity=0;
+       inputmodal.style.opacity=0;
+       let rand=this.rand(3);
+       document.querySelector('.gif').src=`${gif.results[`${rand}`]["media"][0]["nanogif"]["url"]}`;
+    //    console.log(gif.results[3].itemurl);
+       
+    // const gi=document.querySelector('.gif');
+    // // console.log(gi);
+    // gi.style.width="300px";
+    // gi.style.height="300px";
+    
+     
+       
+       modalbtn.addEventListener('click',function(){
+        
+        modal.style.display="none";
+
+          });
+
+       modalclose.addEventListener('click',function(e){
+           e.preventDefault();
+           modal.style.display="none";
+
+             });
+       }
 }
 
 class Game{
     #bot;
     #paper="https://i.insider.com/550b24a46da8115622cd5ecd?width=1000&format=jpeg&auto=webp"
 
-    #str1={0:'therock11',1:`${this.#paper}`,2:'thescissor'};
-    #str=choice==='A'?this.#str1:{0:'rock',1:'paper',2:'scissor'};
+    #str1={0:'images/therock11',1:`${this.#paper}`,2:'images/thescissor'};
+    #str=choice==='A'?this.#str1:{0:'images/rock',1:'images/paper',2:'images/scissor'};
     user;
     count=0;
     #scoreUser=0;
@@ -181,26 +234,33 @@ class Game{
      sb.textContent=`Score(bot) :    ${this.#scoreBot}`;
 
  }
+ win_gify(con){
+     features.loadGif(con)
+ }
 
     _compare(){
         if(this.#bot==this.user)
         {win.textContent="DRAW!! NO WINNER";
-            }
+            this.win_gify('silence');}
         else 
         {   if(this.#bot==2&&this.user==0)
             { this.#scoreUser++;
                  win.textContent="YOU are WINNER🎊🎊";
+                 this.win_gify('i+win');
              }
              else if(this.#bot==0&&this.user==2)
                { win.textContent="BOT WON 💣";
+               this.win_gify('falling+in+dirt');
                this.#scoreBot++;}
              else if(this.user>this.#bot)
             { this.#scoreUser++;
                 win.textContent="YOU are WINNER🎊🎊";
+                this.win_gify('i+won');
             } 
             else
             { win.textContent="BOT WON 💣";
-            this.#scoreBot++;}
+            this.#scoreBot++;
+            this.win_gify('falling');}
               
              }
 
@@ -212,3 +272,4 @@ class Game{
 (()=>
 {const game=new Game();
 const features=new Feature()})();
+const features=new Feature()
