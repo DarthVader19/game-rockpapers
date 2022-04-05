@@ -3,14 +3,16 @@
 .img{
    position: relative;
     /* flex: content; */
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 400px;
+    max-height: 400px;
     /* width: 50px; */
 }
+
+
 body{
     background-color: rgba(25, 84, 99, 0.836);
     background-position: center;
-
+  margin-top: -18rem;
 
 }
 h3{
@@ -96,7 +98,8 @@ h3{
     right:-10rem;
 }
 #creatordiv{
-   font-stretch: expanded;
+   position: relative;
+   top:-25rem;
 }
 div{
     font-size: x-large;
@@ -187,8 +190,12 @@ div{
     
   }
   .gif{
-    width: 380px;
-    height: 450px;
+    /* display: inline-block; */
+    width: 400px;
+    height: 350px;
+    position: relative;
+    right: -32rem;
+    top:24rem;
   }
   
   /* Modal Content/Box */

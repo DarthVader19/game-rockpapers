@@ -129,7 +129,7 @@ class Feature{
     loadGif(search){
         const apikey="E41182PLMN8J";
         const search_term=`${search}`;
-        const lmt=4;
+        const lmt=16;
         const url="https://g.tenor.com/v1/search?q=" + search_term + "&key=" +
         apikey + "&limit=" + lmt;
 
@@ -143,14 +143,16 @@ class Feature{
     };
 
     displayGif(gif){
-         modal.style.display="block";
+        //  modal.style.display="block";
         
-   console.log(gif.results[0]["media"][0]["nanogif"]["url"]);
+//    console.log(gif.results, gif.results[0]["media"][0]["nanogif"]["url"]);
    
     //    modalcontent.textContent ="You WIN";
        modalbtn.style.opacity=0;
        inputmodal.style.opacity=0;
-       let rand=this.rand(3);
+       let rand=this.rand(16);
+    //    console.log(rand);
+       
        document.querySelector('.gif').src=`${gif.results[`${rand}`]["media"][0]["nanogif"]["url"]}`;
     //    console.log(gif.results[3].itemurl);
        
@@ -160,19 +162,9 @@ class Feature{
     // gi.style.height="300px";
     
      
-       
-       modalbtn.addEventListener('click',function(){
-        
-        modal.style.display="none";
+       modalcontent.textContent='';
+      
 
-          });
-          setTimeout(()=> modal.style.display="none",4000)
-
-       modalclose.addEventListener('click',function(e){
-           e.preventDefault();
-           modal.style.display="none";
-
-             });
        }
 }
 
@@ -242,7 +234,7 @@ class Game{
     _compare(){
         if(this.#bot==this.user)
         {win.textContent="DRAW!! NO WINNER";
-            this.win_gify('silence');}
+            this.win_gify('Draw+match');}
         else 
         {   if(this.#bot==2&&this.user==0)
             { this.#scoreUser++;
@@ -261,7 +253,7 @@ class Game{
             else
             { win.textContent="BOT WON 💣";
             this.#scoreBot++;
-            this.win_gify('falling');}
+            this.win_gify('you+lose');}
               
              }
 
