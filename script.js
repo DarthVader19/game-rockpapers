@@ -1,3 +1,4 @@
+ 
 
 const imgUser=document.querySelector('.user')
 const imgBot=document.querySelector('.bot')
@@ -22,6 +23,7 @@ let  choice='N';
 
 
 class Feature{
+    game;
     #data={
         exp:'',
         first:0,
@@ -29,6 +31,7 @@ class Feature{
         second:0,
         answer:0,
     };
+     count=0;
     constructor(){
         this.features();
         // this.getexp();
@@ -43,7 +46,7 @@ class Feature{
     setdata(data='No Data'){
         // this.#data.exp=data.expression;
         // this.#data.answer=data.answer;
-        this.#data.exp="Hi, you need to solve this to access       the content of the Ridonculous version🎃\n        If you solve this you get  a big pie 🍰\n  Expression =             4*arctan(1) ";
+        this.#data.exp="Hi, you need to solve this to access       the content of the Ridonculous version🎃\n        If you solve this you get  a big pie 🍰\n \n 💡💡 Expression =             4 * arctan(1) ";
         this.#data.answer=3.1415926535;
      }
 
@@ -55,7 +58,9 @@ class Feature{
             { 
                 //  this.getexp();
                 // alert("Are you sure you want  to continue");
-                this.modal();
+
+                // this.modal();   
+                this.pass();        //just  to  pass    the question
             
             //    prompt(`Hi,solve this puzzle to access the content \n${this.#data.exp}\nEnter the choice below`,' here')==`${this.#data.answer}`?pass():fail();
              
@@ -67,7 +72,8 @@ class Feature{
                 choice='N';
                 console.log(choice);
                 ver.textContent="Normal Version";
-                const game2=new Game();
+                game._userInput();
+                
                 console.log('not checked');
                 
                 
@@ -80,11 +86,21 @@ class Feature{
         choice='A';
         console.log(choice);
         ver.textContent="Ridonculous Version";
-        const game2=new Game();
+        
+        return new Game();
 
        };
         fail(){
-           alert("Sorry the computer thinks you are not Old enough!");
+            
+            if(this.count<2)
+             { 
+             
+                 alert("Sorry the computer thinks you are not Old enough!");
+                 this.count++;
+                 console.log(Object.freeze(this.game));
+             }
+           else
+        //    location.reload();
            choice='N';
 
        };
@@ -110,14 +126,15 @@ class Feature{
         modal.style.display="none";
 
         if(input.value==`${this.#data.answer}`)
-          this.pass();
+         this.game= this.pass();
         else 
         this.fail();
     }
 
     features(){
         reset.addEventListener('click',function(){
-             location.reload()
+            //  location.reload()
+             const resetGame=new Game();
         })
 
         checkbox.addEventListener('change',this.version.bind(this))
@@ -143,29 +160,17 @@ class Feature{
     };
 
     displayGif(gif){
-        //  modal.style.display="block";
+       
         
 //    console.log(gif.results, gif.results[0]["media"][0]["nanogif"]["url"]);
    
-    //    modalcontent.textContent ="You WIN";
-       modalbtn.style.opacity=0;
-       inputmodal.style.opacity=0;
+       
        let rand=this.rand(16);
     //    console.log(rand);
        
        document.querySelector('.gif').src=`${gif.results[`${rand}`]["media"][0]["nanogif"]["url"]}`;
     //    console.log(gif.results[3].itemurl);
-       
-    // const gi=document.querySelector('.gif');
-    // // console.log(gi);
-    // gi.style.width="300px";
-    // gi.style.height="300px";
-    
-     
-       modalcontent.textContent='';
-      
-
-       }
+        }
 }
 
 class Game{
@@ -262,7 +267,8 @@ class Game{
 }
 
 
-(()=>
-{const game=new Game();
-const features=new Feature()})();
+// (()=>
+// {
+// const features=new Feature()})();
 const features=new Feature()
+const game=new Game();
