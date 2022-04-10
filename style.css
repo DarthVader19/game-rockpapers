@@ -73,7 +73,13 @@ h3{
    
 }
 .btn{
-    font-size:4vh
+    font-size:5rem;
+    padding: 2px;
+    border-width: 2px;
+    border-color: bisque;
+    border-block-color:#ccc;
+    border-radius: 5%;
+    
 }
 .btn-color:default{
     background-color: rgb(56, 97, 107);
@@ -85,7 +91,9 @@ h3{
 #options{
     position: relative;
     top:-32rem;
-    right:-17rem;
+    right:-14rem;
+    /* grid-auto-flow: row; */
+    width: max-content;
 }
 #head{
     font-family: 'Amatic SC', cursive;
