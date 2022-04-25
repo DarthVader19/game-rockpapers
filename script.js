@@ -19,7 +19,7 @@ const modalbtn=document.querySelector('.btn-modal');
  const inputmodal=document.querySelector('.input-modal');
 let  choice='N';
 // imgUser.src="scissor.png";
-import { API_KEY } from "./stuff.js"
+import { el, camino } from "./stuff.js"
 
 
 class Feature{
@@ -144,7 +144,7 @@ class Feature{
     }
 
     loadGif(search){
-        const apikey=API_KEY;
+        const apikey=el()+camino();
         const search_term=`${search}`;
         const lmt=16;
         const url="https://g.tenor.com/v1/search?q=" + search_term + "&key=" +
