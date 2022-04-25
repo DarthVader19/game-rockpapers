@@ -1,3 +1,15 @@
 
+export function el(){
+    const acode=[69,52,49,49,56,50];
+   const  el=String.fromCharCode(...acode);
+   return el;
 
- export  const API_KEY="E41182PLMN8J";
+}
+
+export function camino(){
+    const bcode=[80,76,77,78,56,74];
+    const  camino=String.fromCharCode(...bcode);
+    return camino;
+
+}
+
